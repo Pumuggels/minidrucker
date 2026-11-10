@@ -1,0 +1,49 @@
+<!doctype html><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel=manifest href=manifest.json>
+<style>
+body{font-family:sans-serif;margin:8px;max-width:560px}
+label{display:block;margin:4px 0}
+input[type=range]{width:100%}
+input[type=number]{width:5em}
+button,select{padding:8px 12px;margin:2px}
+canvas{max-width:100%;border:1px solid #888}
+fieldset{margin:8px 0}
+pre{font-size:11px}
+</style>
+<h3>Minidrucker</h3>
+<button id=conn>Verbinden</button> <span id=s></span><br>
+<input type=file id=f accept="image/*"><br>
+<canvas id=c width=384 height=100></canvas>
+<div id=info></div>
+<fieldset><legend>Bild</legend>
+<button id=rot>Drehen 90° (<span id=rotv>0°</span>)</button>
+<label><input type=checkbox id=fh> Horizontal spiegeln</label>
+<label><input type=checkbox id=fv> Vertikal spiegeln</label>
+<label><input type=checkbox id=inv> Invertieren</label>
+<label>Zuschnitt links <input type=range id=cl min=0 max=90 value=0></label>
+<label>Zuschnitt rechts <input type=range id=cr min=0 max=90 value=0></label>
+<label>Zuschnitt oben <input type=range id=co min=0 max=90 value=0></label>
+<label>Zuschnitt unten <input type=range id=cu min=0 max=90 value=0></label>
+</fieldset>
+<fieldset><legend>Druck</legend>
+<label>Raster <select id=d>
+<option value=steinberg>Floyd-Steinberg</option>
+<option value=atkinson>Atkinson</option>
+<option value=threshold>Schwellwert</option></select></label>
+<label>Helligkeit <input type=number id=b value=128></label>
+<label>Kontrast <input type=range id=kon min=-100 max=100 value=0></label>
+<label>Energie <input type=number id=i value=30000></label>
+</fieldset>
+<fieldset><legend>Layout</legend>
+<label>Modus <select id=mode>
+<option value=endless>Endlos</option>
+<option value=label>Etikett</option></select></label>
+<label>Etikettenlänge (mm) <input type=number id=len value=25 step=any></label>
+<label>Rand (mm) <input type=number id=mar value=0 step=any></label>
+<label>Kopien <input type=number id=n value=1 min=1></label>
+<label>Abstand zwischen Kopien (mm) <input type=number id=gap value=5 step=any></label>
+</fieldset>
+<button id=p>Drucken</button>
+<pre id=log></pre>
+<script type=module src=main.js></script>
