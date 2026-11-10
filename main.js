@@ -1,3 +1,5 @@
+// Printing protocol based on rbaron/catprinter (MIT License,
+// Copyright (c) 2021 rbaron). See NOTICE.md.
 const SERVICE = 0xae30, TX = 0xae01, RX = 0xae02;
 const WIDTH = 384, DPMM = 8, CHUNK = 180, DELAY = 1, FEED = 25, MAX_ROWS = 3000;
 const KEYS = ['d', 'b', 'kon', 'i', 'mode', 'len', 'mar', 'gap'];
